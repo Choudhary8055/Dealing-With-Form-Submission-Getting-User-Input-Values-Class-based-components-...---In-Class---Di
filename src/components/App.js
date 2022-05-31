@@ -1,17 +1,40 @@
 import React, { useState, useEffect } from "react";
 import "../styles/App.css";
+// const App = () => {
+//   const [dateTime, setdateTime] = useState("");
+//   const updateTime = () => {
+//     let tempTime = new Date().toLocaleString;
+//     setdateTime(tempTime);
+//   };
+//   useEffect(() => {
+//     let tempTime = new Date().toLocaleString;
+//     setdateTime(tempTime);
+//     let intrval = setInterval(updateTime, 1000);
+//     return () => {
+//       clearInterval(intrval);
+//     };
+//   }, []);
+
+//   return (
+//     <div id="main">
+//       <div className="date-time">{dateTime}</div>
+//     </div>
+//   );
+// };
 const App = () => {
-  const [dateTime, setdateTime] = useState("");
+  const [dateTime, setDateTime] = useState("");
+
   const updateTime = () => {
-    let tempTime = new Date().toLocaleString;
-    setdateTime(tempTime);
+    let tempTime = new Date().toLocaleString();
+    setDateTime(tempTime);
   };
+
   useEffect(() => {
-    let tempTime = new Date().toLocaleString;
-    setdateTime(tempTime);
-    let intrval = setInterval(updateTime, 1000);
+    let tempTime = new Date().toLocaleString();
+    setDateTime(tempTime);
+    let ret = setInterval(updateTime, 1000);
     return () => {
-      clearInterval(intrval);
+      clearInterval(ret);
     };
   }, []);
 
